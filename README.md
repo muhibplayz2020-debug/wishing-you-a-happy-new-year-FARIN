@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year Surprise for FARIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #0f4c75, #3282b8, #bbe1fa);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #ff5252;
+        }
+        .hidden {
+            display: none;
+        }
+        .surprise {
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            animation: fall 3s linear infinite;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh); }
+        }
+    </style>
+</head>
+<body>
+    <div id="level1" class="container">
+        <h1>🎉 Happy New Year, FARIN! 🎉</h1>
+        <p>Welcome to your surprise adventure! To unlock the next level, solve this riddle about our friendship:</p>
+        <p><strong>What grows stronger with distance and time, yet never fades away?</strong></p>
+        <button onclick="checkRiddle()">Answer: Friendship!</button>
+    </div>
+
+    <div id="level2" class="container hidden">
+        <h2>Level 2: A Little Memory Surprise! 💖</h2>
+        <p>Remember that day we first met and talked on August 20th, 2025? It sparked something magical. Here's a fun fact: Our friendship has traveled through the greatest distances and different environments, but it's only gotten brighter!</p>
+        <p>Ready for the final surprise?</p>
+        <button onclick="showLevel3()">Yes, let's go!</button>
+    </div>
+
+    <div id="level3" class="container hidden">
+        <h2>Level 3: The Grand Reveal! 🌟</h2>
+        <p>You've unlocked the heart of this surprise. Here's your special New Year's message:</p>
+        <div class="surprise">
+            <p>As we move into this new year, I wanted to take a moment to let you know how much I appreciate you being in my life. It has been since that day that we met and talked on August 20th, 2025, that you have been building a friendship with me, and this friendship that you have built with me has grown into such a special thing that you are no longer my friend, but my best friend.</p>
+            <p>It feels as if our friendship is something that shall never depart, no matter what goes on and what shape life takes. The greatest distances, different environments, and circumstances cannot lead to a decrease in this one aspect because you mean a lot to me, as you are really very special.</p>
+            <p>In the light of the love, care, and companionship that you have added into my life with your presence, it is a pleasure to be around you. The presence of you in my life has made life itself brighter. It is a pleasure to share this new year with you. It is indeed a pleasure to have you around. It is a pleasure to share this new year with you.</p>
+            <p>No matter what the future holds for us, I hope we can create more beautiful memories together, laugh together more often, and always be the best friends.</p>
+            <p>Wishing you a great year ahead. Happy New Year again.</p>
+        </div>
+        <button onclick="celebrate()">Celebrate! 🎊</button>
+    </div>
+
+    <script>
+        function checkRiddle() {
+            document.getElementById('level1').classList.add('hidden');
+            document.getElementById('level2').classList.remove('hidden');
+        }
+
+        function showLevel3() {
+            document.getElementById('level2').classList.add('hidden');
+            document.getElementById('level3').classList.remove('hidden');
+        }
+
+        function celebrate() {
+            // Add confetti effect
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                document.body.appendChild(confetti);
+                setTimeout(() => confetti.remove(), 3000);
+            }
+            alert("Happy New Year, FARIN! May our friendship shine forever! 💕");
+        }
+    </script>
+</body>
+</html>
